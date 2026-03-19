@@ -1,7 +1,7 @@
 {
-  "name": "netsuite-field-explorer",
-  "version": "1.0.0",
-  "description": "Examine the fields in a Netsuite record",
+  "name": "netsuite-field-explorer-plus",
+  "version": "2.0.0",
+  "description": "Examine the fields in a Netsuite record. Modified with enhance properties like expand/collapse all.",
   "main": "index.js",
   "scripts": {
     "prettify": "prettier --write ."

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Netsuite Field Explorer</title>
+    <title>Netsuite Field Explorer Plus</title>
 
     <link
       rel="stylesheet"
@@ -16,50 +16,55 @@
       href="lib/json-formatter-js/json-formatter-js.min.css"
     />
     <link rel="stylesheet" type="text/css" href="css/popup.css" />
-  </head>
+  <head>
+    <title>Netsuite Field Explorer Plus</title>
 
-  <body>
-    <header>
-      <img id="icon" src="img/icon128.png" />
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+  ...
       <div id="title">
-        <h1>Netsuite Field Explorer</h1>
-        <h2>by Michoel Chaikin (michoel@gmail.com)</h2>
+        <h1>Netsuite Field Explorer Plus</h1>
+        <h2>por Michoel Chaikin (michoel@gmail.com)</h2>
       </div>
 
       <a
-        href="https://www.buymeacoffee.com/michoel"
+        href="https://ko-fi.com/cristobalmontenegro"
         target="_blank"
         id="support-button"
       >
         <img
-          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-          alt="Buy Me A Coffee"
+          height="36"
+          style="border:0px;height:36px;"
+          src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
         />
       </a>
     </header>
 
     <div id="search">
-      <input id="searchbox" placeholder="Filter items" />
+      <input id="searchbox" placeholder="Filtrar campos" />
+      <button id="expand-toggle" title="Expandir/Contraer Todo"><i class="fa fa-expand"></i></button>
+      <button id="copy-json" title="Copiar JSON"><i class="fa fa-copy"></i></button>
     </div>
 
     <div id="container">
       <i class="fa fa-spinner fa-pulse"></i>
-      Please wait.. loading record..
+      Por favor espera.. cargando registro..
     </div>
 
     <div id="links">
       <span id="records_browser">
         <i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
-        <a href="#" target="_blank">Open in Records Browser</a>
+        <a href="#" target="_blank">Abrir en Records Browser</a>
       </span>
 
       <span id="records_catalog">
         <i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
-        <a href="#" target="_blank">Open in Records Catalog</a>
+        <a href="#" target="_blank">Abrir en Records Catalog</a>
       </span>
     </div>
-
     <script src="lib/x2js/x2js.js"></script>
     <script src="lib/lodash/lodash.min.js"></script>
     <script src="lib/json-formatter-js/json-formatter-js.min.js"></script>

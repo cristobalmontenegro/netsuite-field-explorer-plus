@@ -29,12 +29,27 @@ header {
 }
 
 #search {
+  display: flex;
+  gap: 5px;
   margin-top: 10px;
   margin-bottom: 5px;
+  padding-right: 5px;
 }
 
 #search > input {
-  width: 590px;
+  flex-grow: 1;
+}
+
+#search > button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search > button:hover {
+  background-color: #e0e0e0;
 }
 
 #container {

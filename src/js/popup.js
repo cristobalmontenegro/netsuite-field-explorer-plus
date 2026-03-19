@@ -1,6 +1,7 @@
 /* globals _, X2JS, JSONFormatter */
 
 let record = null;
+let allExpanded = false;
 
 chrome.tabs.query({ active: true, currentWindow: true }, async ([tab]) => {
   const response = await fetch(`${tab.url}&xml=T`);
@@ -16,6 +17,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchBox = document.getElementById("searchbox");
   searchBox.focus();
   searchBox.addEventListener("keyup", renderRecord);
+
+  document
+    .getElementById("expand-toggle")
+    .addEventListener("click", function () {
+      allExpanded = !allExpanded;
+      this.innerHTML = allExpanded
+        ? '<i class="fa fa-compress"></i>'
+        : '<i class="fa fa-expand"></i>';
+      renderRecord();
+    });
+
+  document.getElementById("copy-json").addEventListener("click", function () {
+    if (record) {
+      const jsonString = JSON.stringify(record, null, 2);
+      navigator.clipboard.writeText(jsonString).then(() => {
+        const icon = this.querySelector("i");
+        icon.className = "fa fa-check";
+        setTimeout(() => (icon.className = "fa fa-copy"), 1000);
+      });
+    }
+  });
 });
 
 /**
@@ -119,14 +141,14 @@ function renderRecord() {
   const container = document.getElementById("container");
 
   if (!record) {
-    container.innerHTML = `Error!<br/><br>Are you on a record page?`;
+    container.innerHTML = `¡Error!<br/><br>¿Estás en una página de registro de NetSuite?`;
     return;
   }
 
   const searchTerm = document.getElementById("searchbox").value;
   const [filteredRecord, expandLevels] = searchTerm
     ? [filterRecord(record, searchTerm), Infinity]
-    : [record, 2];
+    : [record, allExpanded ? Infinity : 2];
 
   const formatter = new JSONFormatter(filteredRecord, expandLevels, {
     theme: "dark",
