@@ -4,13 +4,24 @@ let record = null;
 let allExpanded = false;
 
 chrome.tabs.query({ active: true, currentWindow: true }, async ([tab]) => {
-  const response = await fetch(`${tab.url}&xml=T`);
-  const data = await response.text();
+  if (!tab.url || !tab.url.includes("netsuite.com")) {
+    renderRecord();
+    return;
+  }
 
-  const parsedRecord = parseRecord(data);
-  record = formatRecord(parsedRecord);
-  renderRecord();
-  updateLinks();
+  try {
+    const response = await fetch(`${tab.url}&xml=T`);
+    if (!response.ok) throw new Error("Network response was not ok");
+    const data = await response.text();
+
+    const parsedRecord = parseRecord(data);
+    record = formatRecord(parsedRecord);
+    renderRecord();
+    updateLinks();
+  } catch (error) {
+    console.error("Error loading record:", error);
+    renderRecord();
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
