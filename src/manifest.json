@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "NetSuite Field Explorer",
-  "description": "Examine the fields in a Netsuite record",
-  "author": "Michoel Chaikin <micholi@gmail.com>",
-  "homepage_url": "https://github.com/michoelchaikin/netsuite-field-explorer",
-  "version": "1.0.0",
+  "name": "NetSuite Field Explorer Plus", 
+  "description": "Examine the fields in a Netsuite record. Enhanced version with urgent fixes.",
+  "author": "Cristóbal Montenegro (Original by Michoel Chaikin)",
+  "homepage_url": "https://github.com/cristobalmontenegro/netsuite-field-explorer-plus",
+  "version": "2.0.0",
   "icons": {
     "16": "img/icon16.png",
     "48": "img/icon48.png",
@@ -22,7 +22,7 @@
   },
   "permissions": ["activeTab", "declarativeContent"],
   "action": {
-    "default_title": "NetSuite Field Explorer",
+    "default_title": "NetSuite Field Explorer Plus",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "img/icon16.png",
