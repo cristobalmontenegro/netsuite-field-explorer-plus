@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Netsuite Field Explorer Plus",
-  "description": "Examine the fields in a Netsuite record. Enhanced version with urgent fixes.",
-  "author": "Cristóbal Montenegro (Original by Michoel Chaikin)",
+  "description": "Examine NetSuite fields. Now with expand/collapse, JSON copy, filtering, and links to Records Browser/Catalog.",
+  "author": "Cristobal Montenegro (Original by Michoel Chaikin)",
   "homepage_url": "https://github.com/cristobalmontenegro/netsuite-field-explorer-plus",
   "version": "2.0.1",
   "icons": {
